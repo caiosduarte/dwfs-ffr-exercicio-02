@@ -25,7 +25,7 @@ export class UsersTable extends Component {
             <tbody>
                 {this.state.items.map ( item => (
                 <tr>
-                    <td><Link  to={`users/${item.name}`}>{item.name}</Link></td>
+                    <td><Link  to={`users/${item.name}`} params={{name: item.name}}>{item.name}</Link></td>
                     <td>{item.email}</td>
                     <td>{item.idade}</td>
                 </tr>
