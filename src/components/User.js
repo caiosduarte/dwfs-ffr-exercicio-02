@@ -1,6 +1,28 @@
-import React from 'react';
-export const User = (props) => (
-    <>
-        <h1>Usuário {props.match.params.name}</h1>
-    </>
-);
+import React, {Component} from 'react';
+
+export class User extends Component {
+    state = {
+        prevTitle: ''        
+    }
+
+    componentDidMount() {
+        this.setState( 
+            {
+                prevTitle: document.title                
+            }            
+        )
+        document.title = this.props.match.params.name;
+    }
+
+    componentWillUnmount() {
+        document.title = this.state.prevTitle;
+    }
+
+    render() {
+        return (
+            <>
+                <h1>Usuário {this.props.match.params.name}</h1>
+            </>  
+        )
+    };
+}

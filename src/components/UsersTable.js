@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link } from "react-router-dom";
+import {UserItem} from './UserItem';
 
 export class UsersTable extends Component {
     state = {
@@ -7,32 +7,34 @@ export class UsersTable extends Component {
             {
                 name: 'Fulano de Tal',
                 email: 'fulanodetal@gmail.com',
-                idade: 28
+                age: 28
             },
             {
                 name: 'Cicrano de Tal',
                 email: 'cicranodetal@gmail.com',
-                idade: 30
+                age: 30
             }
         ]
     }
+
     render () {
         return (
             <table>
-            <thead>
-                <th>Nome</th><th>E-mail</th><th>Idade</th>
-            </thead>
-            <tbody>
-                {this.state.items.map ( item => (
-                <tr>
-                    <td><Link  to={`users/${item.name}`} params={{name: item.name}}>{item.name}</Link></td>
-                    <td>{item.email}</td>
-                    <td>{item.idade}</td>
-                </tr>
-                ))}
-            </tbody>
-        </table>
-
+                <thead>
+                    <tr>
+                        <th>Nome</th><th>E-mail</th><th>Idade</th>
+                    </tr>                    
+                </thead>
+                <tbody>                    
+                    {this.state.items.map ( item => (
+                        <UserItem    
+                        name={item.name} 
+                        email={item.email} 
+                        age={item.age} 
+                        />
+                    ))}
+                </tbody>
+            </table>
         )
     } 
 }
