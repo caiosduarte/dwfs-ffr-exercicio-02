@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export class User extends Component {
+export class UserDetail extends Component {
     state = {
         prevTitle: ''        
     }
@@ -21,7 +21,7 @@ export class User extends Component {
     render() {
         return (
             <>
-                <h1>Usuário {this.props.match.params.name}</h1>
+                <h1>Usuário {this.props.match.params.name}</h1>                
             </>  
         )
     };

@@ -1,3 +1,3 @@
 export { Home } from "./Home";
-export { User } from "./User";
+export { UserDetail } from "./UserDetail";
 export { Users } from "./Users";
